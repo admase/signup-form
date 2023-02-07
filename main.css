@@ -1,0 +1,274 @@
+@charset "UTF-8";
+
+:root {
+    /* Primary Color */
+    --color-black: #000000;
+    --color-white: #FFFFFF;
+    --color-red: #FF0000;
+    --color-gray: #CCCCCC;
+
+    /* Primary Font */
+    --font-family: 'Roboto', sans-serif;
+    --font-size: 1rem;
+    --fw-default: 400;
+    --fw-bold: 500;
+    --fw-bolder: 700;
+
+    /* MISC */
+    --line-height: 1.5;
+    --z-index: 100;
+    --box-sizing: border-box;
+    --outline: none;
+    --min-height: 100vh;
+    --max-width: 100%;
+}
+
+.fullscreen {
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    touch-action: manipulation;
+    outline: var(--outline);
+    box-sizing: var(--box-sizing);
+}
+
+*,
+*::after,
+*::before {
+    -webkit-box-sizing: var(--box-sizing);
+    -moz-box-sizing: var(--box-sizing);
+    box-sizing: inherit;
+}
+
+body {
+    height: 100%;
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    font-weight: var(--fw-default);
+    line-height: var(--line-height);
+    outline: var(--outline);
+    background: var(--color-white);
+    color: var(--color-black);
+    margin: 0;
+    padding: 0;
+    /* overflow: hidden; */
+}
+
+.wrapper {
+    max-width: var(--max-width);
+    min-height: var(--min-height);
+    margin: 0 auto;
+    background-color: var(--color-black);
+}
+
+/* MISC */
+hr {
+    margin: 1rem 0;
+    color: inherit;
+    background-color: currentColor;
+    border: 0;
+    opacity: 0.25;
+}
+
+hr:not([size]) {
+    height: 1px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+    font-weight: var(--fw-bold);
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+    font-weight: var(--fw-bold);
+}
+
+a,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+strong,
+b {
+    font-weight: var(--fw-bold);
+}
+
+em,
+i {
+    font-style: italic;
+}
+
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+li {
+    display: block;
+}
+
+/* Form */
+.form_block {
+    width: 100%;
+    min-height: var(--min-height);
+    margin: 0 auto;
+}
+
+label.form-label {
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    font-size: 0.85rem;
+    font-weight: var(--fw-default);
+    margin-bottom: 2px;
+    padding-bottom: 0;
+}
+
+.error {
+    color: var(--color-red);
+    font-size: 0.75rem;
+    font-weight: var(--fw-bold);
+}
+
+/* .error:valid {
+    border: 1px solid blue;
+} */
+
+.error:invalid {
+    border: 1px solid var(--color-red);
+}
+
+.form-control,
+.form-control:focus {
+    box-shadow: none;
+    outline: none;
+    border: 1px solid var(--color-gray);
+    border-radius: 3px;
+    height: 32px;
+}
+
+button.btn-register,
+button.btn-register:focus,
+button.btn-register:hover {
+    box-shadow: none;
+    outline: none;
+    background-color: #596D48;
+    color: var(--color-white);
+    font-size: 1.2rem;
+    padding: 10px 50px;
+    border-radius: 8px;
+}
+
+hr {
+    margin: 75px auto;
+    border: 3px double var(--color-gray);
+    width: var(--max-width);
+}
+
+.form a,
+.form a:hover {
+    color: var(--color-black);
+    font-size: 1.1rem;
+}
+
+/* Hero */
+#hero_img {
+    max-width: var(--max-width);
+    min-height: var(--min-height);
+    background: url("./ghost.jpg") no-repeat center center / cover;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    z-index: var(--z-index);
+}
+
+.img-caption {
+    color: var(--color-white);
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 10;
+    font-size: 0.75rem;
+}
+
+.img-caption a, .img-caption a:hover {
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+.logo {
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.4);
+    color: var(--color-white);
+    text-align: center;
+    position: absolute;
+    top: 25%;
+    left: 0;
+    padding: 40px;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 2.8rem;
+    font-weight: var(--fw-bolder);
+}
+
+.subheading {
+    margin-bottom: 5rem;
+}
+
+.subheading p {
+    font-size: 1.4rem;
+}
+
+/* Media Queries */
+@media (max-width: 767px)
+{
+    .wrapper {
+        max-width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .subheading p {
+        font-size: 1.3rem !important;
+        text-align: center;
+    }
+
+    #hero_img {
+        width: 100%;
+        min-height: 50vh !important;
+        padding: 0;
+        margin: 0 auto 3rem auto;
+        position: unset;
+    }
+
+    button.btn-register {
+        display: grid;
+        text-align: center;
+        width: 100%;
+    }
+}
